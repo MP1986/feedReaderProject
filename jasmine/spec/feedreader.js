@@ -31,16 +31,15 @@ $(function() {
              * and that the URL is not empty.
              */
 
-
+/*
             it("should have a working URL", function() {
                     for (var i = 0; i < allFeeds.length; i++) {
 
                         expect(allFeeds[id].url).toBeDefined();
                         expect(allFeeds[id].url).not.toBe(0);
                     }
-                }
-            );
-
+                });
+*/
 
 
 
