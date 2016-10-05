@@ -31,17 +31,21 @@ $(function() {
              * and that the URL is not empty.
              */
 
-/*
+
             it("should have a working URL", function() {
                     for (var i = 0; i < allFeeds.length; i++) {
 
-                        expect(allFeeds[id].url).toBeDefined();
-                        expect(allFeeds[id].url).not.toBe(0);
+                        expect(allFeeds[i].url).toBeDefined();
+                        expect(allFeeds[i].url.length).not.toBe(0);
                     }
                 });
+
+
+/*
+allFeeds.forEach(function(feed, index) {
+    console.log(feed);
+})
 */
-
-
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -51,21 +55,27 @@ $(function() {
 
 
 /* TODO: Write a new test suite named "The menu" */
-/*
-$(function() {
+
 
     describe('The menu', function() {
 
-        it
-    })
-
-}
-*/
-/* TODO: Write a test that ensures the menu element is
+/* TODO: Write a test that ensures the menu element is 
  * hidden by default. You'll have to analyze the HTML and
  * the CSS to determine how we're performing the
  * hiding/showing of the menu element.
  */
+        it('should be hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBeTruthy;
+        });
+
+/*
+        it('should change visibility when icon is clicked', function() {
+            $('a.menu-icon-link').click(function(){
+            expect($('body').hasClass('menu-hidden')).toBeFalsy;
+        });
+*/
+    });
+
 
 /* TODO: Write a test that ensures the menu changes
  * visibility when the menu icon is clicked. This test
@@ -75,12 +85,33 @@ $(function() {
 
 /* TODO: Write a new test suite named "Initial Entries" */
 
+/*
+$(function( {
+    describe("Initial Entries", function() {
+*/
+
+
 /* TODO: Write a test that ensures when the loadFeed
  * function is called and completes its work, there is at least
  * a single .entry element within the .feed container.
  * Remember, loadFeed() is asynchronous so this test will require
  * the use of Jasmine's beforeEach and asynchronous done() function.
  */
+
+/*
+        var LoadFeed = new loadFeed();
+
+        beforeEach(function(done) {
+            loadFeed.
+        })
+
+        it('should have at least one .entry in .feed container', function(done) {
+
+        })
+    })
+}))
+*/
+
 
 /* TODO: Write a new test suite named "New Feed Selection"
 
