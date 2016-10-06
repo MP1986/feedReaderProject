@@ -68,12 +68,12 @@ allFeeds.forEach(function(feed, index) {
             expect($('body').hasClass('menu-hidden')).toBeTruthy;
         });
 
-/*
+
         it('should change visibility when icon is clicked', function() {
-            $('a.menu-icon-link').click(function(){
+            $('a.menu-icon-link').click(function() {
             expect($('body').hasClass('menu-hidden')).toBeFalsy;
         });
-*/
+        });
     });
 
 
@@ -85,10 +85,10 @@ allFeeds.forEach(function(feed, index) {
 
 /* TODO: Write a new test suite named "Initial Entries" */
 
-/*
+
 $(function( {
     describe("Initial Entries", function() {
-*/
+
 
 
 /* TODO: Write a test that ensures when the loadFeed
@@ -98,19 +98,21 @@ $(function( {
  * the use of Jasmine's beforeEach and asynchronous done() function.
  */
 
-/*
+
         var LoadFeed = new loadFeed();
 
+/*
         beforeEach(function(done) {
             loadFeed.
-        })
-
-        it('should have at least one .entry in .feed container', function(done) {
-
-        })
-    })
-}))
+        });
 */
+        it('should have at least one .entry in .feed container', function(done) {
+    
+            expect($('feed').hasClass('entry')).toBeTruthy;
+        });
+    });
+});
+
 
 
 /* TODO: Write a new test suite named "New Feed Selection"
