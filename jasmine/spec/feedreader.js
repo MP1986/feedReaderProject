@@ -86,7 +86,7 @@ allFeeds.forEach(function(feed, index) {
 /* TODO: Write a new test suite named "Initial Entries" */
 
 
-$(function( {
+
     describe("Initial Entries", function() {
 
 
@@ -99,24 +99,36 @@ $(function( {
  */
 
 
-        var LoadFeed = new loadFeed();
 
-/*
+
         beforeEach(function(done) {
-            loadFeed.
+            loadFeed(0, done);
+            console.log($('feed').html());
         });
-*/
+
+
+
         it('should have at least one .entry in .feed container', function(done) {
     
-            expect($('feed').hasClass('entry')).toBeTruthy;
+            expect($('body').hasClass('feed')).toBeTruthy;
+            expect($('feed'.length)toBeGreaterThan('0'));
         });
+
     });
-});
 
 
 
 /* TODO: Write a new test suite named "New Feed Selection"
-
+*/
+/*
+$(function( {
+    describe("New Feed Selection", function() {
+        it('should change the content when a new feed is loaded', function(done) {
+            expect($())
+        })
+    });
+});
+*/
     /* TODO: Write a test that ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
