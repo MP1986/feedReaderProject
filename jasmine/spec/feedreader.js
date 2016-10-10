@@ -59,20 +59,27 @@ allFeeds.forEach(function(feed, index) {
 
     describe('The menu', function() {
 
-/* TODO: Write a test that ensures the menu element is 
+/* TODO: Write a test that ensures the menu element is
  * hidden by default. You'll have to analyze the HTML and
  * the CSS to determine how we're performing the
  * hiding/showing of the menu element.
  */
         it('should be hidden by default', function() {
-            expect($('body').hasClass('menu-hidden')).toBeTruthy;
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
 
         it('should change visibility when icon is clicked', function() {
-            $('a.menu-icon-link').click(function() {
-            expect($('body').hasClass('menu-hidden')).toBeFalsy;
-        });
+
+            // Showing
+            $('a.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+
+            // Hiding
+            $('a.menu-icon-link').click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+
+
         });
     });
 
@@ -103,23 +110,48 @@ allFeeds.forEach(function(feed, index) {
 
         beforeEach(function(done) {
             loadFeed(0, done);
-            console.log($('feed').html());
         });
 
 
 
         it('should have at least one .entry in .feed container', function(done) {
-    
-            expect($('body').hasClass('feed')).toBeTruthy;
-            expect($('feed'.length)toBeGreaterThan('0'));
+
+            expect($('.feed .entry').length).not.toBe(0);
+            done();
         });
 
     });
 
 
-
 /* TODO: Write a new test suite named "New Feed Selection"
 */
+
+  describe("New Feed Selection", function() {
+
+        beforeEach(function(done) {
+
+            var oldFeed,
+                newFeed;
+
+            loadFeed(0, function() {
+                oldFeed = $('feed');
+                console.log(oldFeed);
+                done();
+            });
+
+        });
+
+        it('Should change the content', function(done) {
+            loadFeed(1, function() {
+                newFeed = $('feed');
+                done();
+            });
+            expect($(oldFeed).not.toBe(newFeed));
+            done();
+        });
+
+    });
+
 /*
 $(function( {
     describe("New Feed Selection", function() {
