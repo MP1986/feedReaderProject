@@ -132,7 +132,7 @@ $(function() {
         beforeEach(function(done) {
 
             loadFeed(0, function() {
-                oldFeed = $('feed');
+                oldFeed = $('feed').text;
                 console.log(oldFeed);
                 done();
             });
@@ -141,7 +141,7 @@ $(function() {
 
         it('Should change the content', function(done) {
             loadFeed(1, function() {
-                newFeed = $('feed');
+                newFeed = $('feed').text;
                 expect($(oldFeed)).not.toBe(newFeed);
                 done();
             });
