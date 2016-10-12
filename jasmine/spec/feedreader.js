@@ -31,12 +31,20 @@ $(function() {
          * and that the URL is not empty.
          */
 
-
         it("should have a working URL", function() {
             for (var i = 0; i < allFeeds.length; i++) {
 
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
+                
+            }
+        });
+
+                it("should have a name", function() {
+            for (var i = 0; i < allFeeds.length; i++) {
+
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name).not.toBe('');                
             }
         });
     });
@@ -134,10 +142,9 @@ $(function() {
         it('Should change the content', function(done) {
             loadFeed(1, function() {
                 newFeed = $('feed');
+                expect($(oldFeed)).not.toBe(newFeed);
                 done();
             });
-            expect($(oldFeed)).not.toBe(newFeed);
-            done();
         });
 
     });
