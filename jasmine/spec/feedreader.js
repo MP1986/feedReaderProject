@@ -1,4 +1,4 @@
-/* feedreader.js
+ /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
  * all of the tests that will be run against your application.
@@ -142,7 +142,9 @@ $(function() {
         it('Should change the content', function(done) {
             loadFeed(1, function() {
                 newFeed = $('feed').text;
-                expect($(oldFeed)).not.toBe(newFeed);
+                console.log(newFeed);
+                console.log(oldFeed);
+                expect($(oldFeed)).not.toEqual(newFeed);
                 done();
             });
         });
